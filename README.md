@@ -12,7 +12,7 @@ yarn add iwe7-ng-dialog
 ```
 
 ```ts
-import { DialogService } from 'ng-dialog';
+import { DialogService } from 'iwe7-ng-dialog';
 constructor(private dialog: DialogService) {}
 showComp() {
   this.dialog.show(TestDialogComponent);
