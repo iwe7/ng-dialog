@@ -1,0 +1,18 @@
+<div dialogMask *ngIf="visiable" (click)="hide($event)" [style.z-index]="zIndex" [@dialogFade]="'in'"></div>
+<div dialogWrap *ngIf="visiable" (click)="hide($event)" [style.z-index]="zIndex" [@dialogZoom]="'in'" (@dialogZoom.done)="animateDone($event)">
+  <div dialog>
+    <div dialogContent>
+      <div dialogClose>
+        <span dialogCloseX></span>
+      </div>
+      <div dialogBody>
+        <ng-container *ngIf="body|isTemplateRef">
+          <ng-container *ngTemplateOutlet="body"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="body|isType">
+          <ng-container *ngComponentOutlet="body"></ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
